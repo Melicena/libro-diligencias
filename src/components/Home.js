@@ -28,6 +28,40 @@ const Home = ({ correoUsuario }) => {
   const [dgs, setDgs] = useState(valorInicial);
   const [lista, setLista] = useState([]);
   const [dgsId, setDgsId] = useState("");
+  const [filtro, setFiltro] = useState("");
+  const [filtrada, setFiltrada] = useState([]);
+
+  useEffect(() => {
+    const getLista = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "diligencias"));
+        const docs = [];
+        querySnapshot.forEach((doc) => {
+          docs.push({ ...doc.data(), id: doc.id });
+        });
+        setLista(docs.sort((a, b) => b.numero - a.numero));
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getLista();
+  }, []);
+
+  useEffect(() => {
+    if (filtro !== "") {
+      const listaFiltrada = lista.filter(
+        (item) =>
+          item.numero.includes(filtro) ||
+          item.descripcion.includes(filtro) ||
+          item.hecho.includes(filtro) ||
+          item.instructor.includes(filtro) ||
+          item.evento.includes(filtro)
+      );
+      setFiltrada(listaFiltrada);
+    } else {
+      setFiltrada(lista);
+    }
+  }, [filtro, lista]);
 
   const capturarInputs = (e) => {
     const { name, value } = e.target;
@@ -52,19 +86,27 @@ const Home = ({ correoUsuario }) => {
 
   const guardarDatos = async (e) => {
     e.preventDefault();
-    if(dgsId === ""){
+    if (dgsId === "") {
       try {
         await addDoc(collection(db, "diligencias"), {
-          ...dgs,
+          numero: dgs.numero.toUpperCase(),
+          descripcion: dgs.descripcion.toUpperCase(),
+          hecho: dgs.hecho.toUpperCase(),
+          instructor: dgs.instructor.toUpperCase(),
+          evento: dgs.evento.toUpperCase()
         });
-      
+
       } catch (error) {
         console.log(error);
       }
     }
     else {
       await setDoc(doc(db, "diligencias", dgsId), {
-        ...dgs
+        numero: dgs.numero.toUpperCase(),
+        descripcion: dgs.descripcion.toUpperCase(),
+        hecho: dgs.hecho.toUpperCase(),
+        instructor: dgs.instructor.toUpperCase(),
+        evento: dgs.evento.toUpperCase()
       })
     }
     setDgs({ ...valorInicial });
@@ -143,60 +185,74 @@ const Home = ({ correoUsuario }) => {
             <div className="card card-body">
               <div
                 className="form-group"
-                style={{ display: "flex", flexWrap: "wrap" }}
-              >
+                style={{ display: "flex", flexWrap: "wrap" }}>
                 <input
                   type="text"
                   name="numero"
-                  className="form-control mt-2"
-                  placeholder="Ingresa el número de las diligencias"
+                  className="form-control mt-2 mx-1"
+                  placeholder="Número"
                   onChange={capturarInputs}
                   value={dgs.numero}
-                  style={{ flexBasis: "20%" }}
-                ></input>
+                  style={{ flexBasis: "20%" }} />
                 <input
                   type="text"
                   name="descripcion"
                   className="form-control mt-2"
-                  placeholder="Ingresa una descripción de las diligencias"
+                  placeholder="Descripción"
                   onChange={capturarInputs}
                   value={dgs.descripcion}
-                  style={{ flexBasis: "80%" }}
-                ></input>
+                  style={{ flexBasis: "78%" }} />
                 <input
                   type="text"
                   name="hecho"
                   className="form-control mt-2"
-                  placeholder="Ingresa el número de hecho"
+                  placeholder="Número de hecho"
                   onChange={capturarInputs}
                   value={dgs.hecho}
-                  style={{ flexBasis: "33%" }}
-                ></input>
+                  style={{ flexBasis: "25%" }} />
                 <input
                   type="text"
                   name="instructor"
-                  className="form-control mt-2"
-                  placeholder="Ingresa el instructor de las diligencias"
+                  className="form-control mt-2 mx-1"
+                  placeholder="Instructor"
                   onChange={capturarInputs}
                   value={dgs.instructor}
-                  style={{ flexBasis: "33%" }}
-                ></input>
+                  style={{ flexBasis: "25%" }} />
                 <input
                   type="text"
                   name="evento"
-                  className="form-control mt-2"
-                  placeholder="Ingresa los eventos (opcional)"
+                  className="form-control mt-2 mx-1"
+                  placeholder="Eventos (opcional)"
                   onChange={capturarInputs}
                   value={dgs.evento}
-                  style={{ flexBasis: "33%" }}
-                ></input>
+                  style={{ flexBasis: "25%" }} />
+                <button
+                  className="btn btn-primary mt-2 "
+                  style={{ flexBasis: "20%" }}>
+                  {dgsId === "" ? "Insertar" : "Actualizar"}
+                </button>
+
               </div>
-              <button className="btn btn-primary mt-2">{dgsId === "" ? "Insertar": "Actualizar"}</button>
             </div>
           </form>
         </div>
         <div className="col-md-12 text-center">
-          <h3>Lista de diligencias</h3>
+          <div className="row">
+            <div className="col-md-6 text-end">
+              <h3>Lista de diligencias</h3>
+            </div>
+            <div className="col-md-5 text-end mt-1">
+              <label>
+                Filtrar:
+                <input
+                  type="text"
+                  value={filtro}
+                  onChange={(e) => setFiltro(e.target.value)}
+                />
+              </label>
+            </div>
+          </div>
+
           <div className="container card">
             <table>
               <thead>
@@ -208,9 +264,13 @@ const Home = ({ correoUsuario }) => {
                   <th>Evento</th>
                   <th>Acciones</th>
                 </tr>
+
               </thead>
+
               <tbody>
-                {lista.map((list) => (
+
+                {filtrada.map((list) => (
+
                   <tr key={list.id}>
                     <td>{list.numero}</td>
                     <td>{list.descripcion}</td>
@@ -220,16 +280,16 @@ const Home = ({ correoUsuario }) => {
                     <td>
                       <button
                         className="btn btn-danger"
-                        onClick={() => deleteDgs(list.id)}
-                      >
+                        onClick={() => deleteDgs(list.id)}>
                         Eliminar
                       </button>
+
                       <button
                         className="btn btn-success m-1"
-                        onClick={() => setDgsId(list.id)}
-                      >
+                        onClick={() => setDgsId(list.id)}>
                         Editar
                       </button>
+
                     </td>
                   </tr>
                 ))}
