@@ -18,7 +18,7 @@ const db = getFirestore(firebase);
 
 const Home = ({ correoUsuario }) => {
   const valorInicial = {
-    numero: 0,
+    numero: "",
     descripcion: "",
     hecho: "",
     instructor: "",
@@ -27,22 +27,11 @@ const Home = ({ correoUsuario }) => {
 
   const [dgs, setDgs] = useState(valorInicial);
   const [lista, setLista] = useState([]);
+  const [dgsId, setDgsId] = useState("");
 
   const capturarInputs = (e) => {
     const { name, value } = e.target;
     setDgs({ ...dgs, [name]: value });
-  };
-
-  const guardarDatos = async (e) => {
-    e.preventDefault();
-    try {
-      await addDoc(collection(db, "dgs"), {
-        ...dgs,
-      });
-    } catch (error) {
-      console.log(error);
-    }
-    setDgs({ ...valorInicial });
   };
 
   useEffect(() => {
@@ -51,16 +40,83 @@ const Home = ({ correoUsuario }) => {
         const querySnapshot = await getDocs(collection(db, "diligencias"));
         const docs = [];
         querySnapshot.forEach((doc) => {
-          docs.push({...doc.data(), id: doc.id });
+          docs.push({ ...doc.data(), id: doc.id });
         });
-        setLista(docs);
-        lista.sort((x,y) => x.numero.localCompare(y.numero));
+        setLista(docs.sort((a, b) => b.numero - a.numero));
       } catch (error) {
         console.log(error);
       }
     };
     getLista();
   }, []);
+
+  const guardarDatos = async (e) => {
+    e.preventDefault();
+    if(dgsId === ""){
+      try {
+        await addDoc(collection(db, "diligencias"), {
+          ...dgs,
+        });
+      
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    else {
+      await setDoc(doc(db, "diligencias", dgsId), {
+        ...dgs
+      })
+    }
+    setDgs({ ...valorInicial });
+    setDgsId("")
+    const getLista = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "diligencias"));
+        const docs = [];
+        querySnapshot.forEach((doc) => {
+          docs.push({ ...doc.data(), id: doc.id });
+        });
+        setLista(docs.sort((a, b) => b.numero - a.numero));
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getLista();
+
+  };
+
+  const deleteDgs = async (id) => {
+    await deleteDoc(doc(db, "diligencias", id));
+    const getLista = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "diligencias"));
+        const docs = [];
+        querySnapshot.forEach((doc) => {
+          docs.push({ ...doc.data(), id: doc.id });
+        });
+        setLista(docs.sort((a, b) => b.numero - a.numero));
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getLista();
+  };
+
+  const getOne = async (id) => {
+    try {
+      const docRef = doc(db, "diligencias", id)
+      const docSnap = await getDoc(docRef)
+      setDgs(docSnap.data())
+    } catch (error) {
+      console.log(error)
+    }
+  };
+
+  useEffect(() => {
+    if (dgsId !== "") {
+      getOne(dgsId);
+    }
+  }, [dgsId]);
 
   return (
     <div className="container">
@@ -81,11 +137,14 @@ const Home = ({ correoUsuario }) => {
       </div>
       <hr />
       <div className="row">
-        <div className="col-md-4 text-center">
+        <div className=" text-center">
           <h3>Ingresar diligencias</h3>
           <form onSubmit={guardarDatos}>
             <div className="card card-body">
-              <div className="form-group">
+              <div
+                className="form-group"
+                style={{ display: "flex", flexWrap: "wrap" }}
+              >
                 <input
                   type="text"
                   name="numero"
@@ -93,6 +152,7 @@ const Home = ({ correoUsuario }) => {
                   placeholder="Ingresa el número de las diligencias"
                   onChange={capturarInputs}
                   value={dgs.numero}
+                  style={{ flexBasis: "20%" }}
                 ></input>
                 <input
                   type="text"
@@ -101,6 +161,7 @@ const Home = ({ correoUsuario }) => {
                   placeholder="Ingresa una descripción de las diligencias"
                   onChange={capturarInputs}
                   value={dgs.descripcion}
+                  style={{ flexBasis: "80%" }}
                 ></input>
                 <input
                   type="text"
@@ -109,6 +170,7 @@ const Home = ({ correoUsuario }) => {
                   placeholder="Ingresa el número de hecho"
                   onChange={capturarInputs}
                   value={dgs.hecho}
+                  style={{ flexBasis: "33%" }}
                 ></input>
                 <input
                   type="text"
@@ -117,6 +179,7 @@ const Home = ({ correoUsuario }) => {
                   placeholder="Ingresa el instructor de las diligencias"
                   onChange={capturarInputs}
                   value={dgs.instructor}
+                  style={{ flexBasis: "33%" }}
                 ></input>
                 <input
                   type="text"
@@ -125,13 +188,14 @@ const Home = ({ correoUsuario }) => {
                   placeholder="Ingresa los eventos (opcional)"
                   onChange={capturarInputs}
                   value={dgs.evento}
+                  style={{ flexBasis: "33%" }}
                 ></input>
               </div>
-              <button className="btn btn-primary mt-2">Ingresar</button>
+              <button className="btn btn-primary mt-2">{dgsId === "" ? "Insertar": "Actualizar"}</button>
             </div>
           </form>
         </div>
-        <div className="col-md-8 text-center">
+        <div className="col-md-12 text-center">
           <h3>Lista de diligencias</h3>
           <div className="container card">
             <table>
@@ -154,8 +218,18 @@ const Home = ({ correoUsuario }) => {
                     <td>{list.instructor}</td>
                     <td>{list.evento}</td>
                     <td>
-                      <button className="btn btn-danger">Eliminar</button>
-                      <button className="btn btn-success m-1">Editar</button>
+                      <button
+                        className="btn btn-danger"
+                        onClick={() => deleteDgs(list.id)}
+                      >
+                        Eliminar
+                      </button>
+                      <button
+                        className="btn btn-success m-1"
+                        onClick={() => setDgsId(list.id)}
+                      >
+                        Editar
+                      </button>
                     </td>
                   </tr>
                 ))}
