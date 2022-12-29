@@ -23,6 +23,7 @@ const Home = ({ correoUsuario }) => {
     hecho: "",
     instructor: "",
     evento: "",
+    estado: "Abiertas"
   };
 
   const [dgs, setDgs] = useState(valorInicial);
@@ -55,7 +56,8 @@ const Home = ({ correoUsuario }) => {
           item.descripcion.includes(filtro) ||
           item.hecho.includes(filtro) ||
           item.instructor.includes(filtro) ||
-          item.evento.includes(filtro)
+          item.evento.includes(filtro) ||
+          item.estado.includes(filtro)
       );
       setFiltrada(listaFiltrada);
     } else {
@@ -93,7 +95,8 @@ const Home = ({ correoUsuario }) => {
           descripcion: dgs.descripcion.toUpperCase(),
           hecho: dgs.hecho.toUpperCase(),
           instructor: dgs.instructor.toUpperCase(),
-          evento: dgs.evento.toUpperCase()
+          evento: dgs.evento.toUpperCase(),
+          estado: dgs.evento.toUpperCase()
         });
 
       } catch (error) {
@@ -106,6 +109,7 @@ const Home = ({ correoUsuario }) => {
         descripcion: dgs.descripcion.toUpperCase(),
         hecho: dgs.hecho.toUpperCase(),
         instructor: dgs.instructor.toUpperCase(),
+        estado: dgs.estado.toUpperCase(),
         evento: dgs.evento.toUpperCase()
       })
     }
@@ -193,7 +197,7 @@ const Home = ({ correoUsuario }) => {
                   placeholder="Número"
                   onChange={capturarInputs}
                   value={dgs.numero}
-                  style={{ flexBasis: "20%" }} />
+                  style={{ flexBasis: "20%" }} required/>
                 <input
                   type="text"
                   name="descripcion"
@@ -209,7 +213,7 @@ const Home = ({ correoUsuario }) => {
                   placeholder="Número de hecho"
                   onChange={capturarInputs}
                   value={dgs.hecho}
-                  style={{ flexBasis: "25%" }} />
+                  style={{ flexBasis: "20%" }} />
                 <input
                   type="text"
                   name="instructor"
@@ -217,7 +221,7 @@ const Home = ({ correoUsuario }) => {
                   placeholder="Instructor"
                   onChange={capturarInputs}
                   value={dgs.instructor}
-                  style={{ flexBasis: "25%" }} />
+                  style={{ flexBasis: "20%" }} />
                 <input
                   type="text"
                   name="evento"
@@ -225,10 +229,18 @@ const Home = ({ correoUsuario }) => {
                   placeholder="Eventos (opcional)"
                   onChange={capturarInputs}
                   value={dgs.evento}
-                  style={{ flexBasis: "25%" }} />
+                  style={{ flexBasis: "20%" }} />
+                   <input
+                  type="text"
+                  name="estado"
+                  className="form-control mt-2 mx-1"
+                  placeholder="Estado"
+                  onChange={capturarInputs}
+                  value={dgs.estado}
+                  style={{ flexBasis: "20%" }} />
                 <button
                   className="btn btn-primary mt-2 "
-                  style={{ flexBasis: "20%" }}>
+                  style={{ flexBasis: "15%" }}>
                   {dgsId === "" ? "Insertar" : "Actualizar"}
                 </button>
 
@@ -243,7 +255,7 @@ const Home = ({ correoUsuario }) => {
             </div>
             <div className="col-md-5 text-end mt-1">
               <label>
-                Filtrar:
+                Filtrar:&nbsp;
                 <input
                   type="text"
                   value={filtro}
@@ -262,6 +274,7 @@ const Home = ({ correoUsuario }) => {
                   <th>Hecho</th>
                   <th>Instructor</th>
                   <th>Evento</th>
+                  <th>Estado</th>
                   <th>Acciones</th>
                 </tr>
 
@@ -277,6 +290,7 @@ const Home = ({ correoUsuario }) => {
                     <td>{list.hecho}</td>
                     <td>{list.instructor}</td>
                     <td>{list.evento}</td>
+                    <td>{list.estado}</td>
                     <td>
                       <button
                         className="btn btn-danger"
