@@ -165,6 +165,7 @@ const Home = ({ correoUsuario }) => {
   }, [dgsId]);
 
   return (
+    
     <div className="container">
       <div className="row">
         <div className="col-md-8">
