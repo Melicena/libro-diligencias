@@ -59,12 +59,12 @@ const Home = ({ correoUsuario }) => {
       const listaFiltrada = lista.filter(
         (item) =>
           item.numero.includes(filtro) ||
-          item.descripcion.includes(filtro) ||
+          item.descripcion.toLowerCase().includes(filtro.toLowerCase()) ||
           item.hecho.includes(filtro) ||
-          item.instructor.includes(filtro) ||
-          item.evento.includes(filtro) ||
-          item.estado.includes(filtro) ||
-          item.denunciante.includes(filtro)
+          item.instructor.toLowerCase().includes(filtro.toLowerCase()) ||
+          item.evento.toLowerCase().includes(filtro.toLowerCase()) ||
+          item.estado.toLowerCase().includes(filtro.toLowerCase()) ||
+          item.denunciante.toLowerCase().includes(filtro.toLowerCase())
       );
       setFiltrada(listaFiltrada);
     } else {
@@ -119,7 +119,7 @@ const Home = ({ correoUsuario }) => {
         instructor: dgs.instructor.toUpperCase(),
         estado: dgs.estado.toUpperCase(),
         evento: dgs.evento.toUpperCase(),
-        evento: dgs.denunciante.toUpperCase()
+        denunciante: dgs.denunciante.toUpperCase()
       })
     }
     setDgs({ ...valorInicial });
