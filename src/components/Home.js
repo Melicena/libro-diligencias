@@ -22,8 +22,14 @@ const Home = ({ correoUsuario }) => {
     descripcion: "",
     hecho: "",
     instructor: "",
+    denunciante: "",
     evento: "",
-    estado: "Abiertas"
+    estado: "Abiertas",
+    a: "",
+    b: "",
+    c: "",
+    d: false,
+    e: false,
   };
 
   const [dgs, setDgs] = useState(valorInicial);
@@ -57,7 +63,8 @@ const Home = ({ correoUsuario }) => {
           item.hecho.includes(filtro) ||
           item.instructor.includes(filtro) ||
           item.evento.includes(filtro) ||
-          item.estado.includes(filtro)
+          item.estado.includes(filtro) ||
+          item.denunciante.includes(filtro)
       );
       setFiltrada(listaFiltrada);
     } else {
@@ -96,7 +103,8 @@ const Home = ({ correoUsuario }) => {
           hecho: dgs.hecho.toUpperCase(),
           instructor: dgs.instructor.toUpperCase(),
           evento: dgs.evento.toUpperCase(),
-          estado: dgs.evento.toUpperCase()
+          estado: dgs.estado.toUpperCase(),
+          denunciante: dgs.denunciante.toUpperCase()
         });
 
       } catch (error) {
@@ -110,7 +118,8 @@ const Home = ({ correoUsuario }) => {
         hecho: dgs.hecho.toUpperCase(),
         instructor: dgs.instructor.toUpperCase(),
         estado: dgs.estado.toUpperCase(),
-        evento: dgs.evento.toUpperCase()
+        evento: dgs.evento.toUpperCase(),
+        evento: dgs.denunciante.toUpperCase()
       })
     }
     setDgs({ ...valorInicial });
@@ -198,7 +207,7 @@ const Home = ({ correoUsuario }) => {
                   placeholder="Número"
                   onChange={capturarInputs}
                   value={dgs.numero}
-                  style={{ flexBasis: "20%" }} required/>
+                  style={{ flexBasis: "10%" }} required/>
                 <input
                   type="text"
                   name="descripcion"
@@ -206,7 +215,7 @@ const Home = ({ correoUsuario }) => {
                   placeholder="Descripción"
                   onChange={capturarInputs}
                   value={dgs.descripcion}
-                  style={{ flexBasis: "78%" }} />
+                  style={{ flexBasis: "72%" }} />
                 <input
                   type="text"
                   name="hecho"
@@ -214,7 +223,15 @@ const Home = ({ correoUsuario }) => {
                   placeholder="Número de hecho"
                   onChange={capturarInputs}
                   value={dgs.hecho}
-                  style={{ flexBasis: "20%" }} />
+                  style={{ flexBasis: "15%" }} />
+                   <input
+                  type="text"
+                  name="denunciante"
+                  className="form-control mt-2"
+                  placeholder="Denunciante"
+                  onChange={capturarInputs}
+                  value={dgs.denunciante}
+                  style={{ flexBasis: "30%" }} />
                 <input
                   type="text"
                   name="instructor"
@@ -222,7 +239,7 @@ const Home = ({ correoUsuario }) => {
                   placeholder="Instructor"
                   onChange={capturarInputs}
                   value={dgs.instructor}
-                  style={{ flexBasis: "20%" }} />
+                  style={{ flexBasis: "15%" }} />
                 <input
                   type="text"
                   name="evento"
@@ -238,7 +255,7 @@ const Home = ({ correoUsuario }) => {
                   placeholder="Estado"
                   onChange={capturarInputs}
                   value={dgs.estado}
-                  style={{ flexBasis: "20%" }} />
+                  style={{ flexBasis: "15%" }} />
                 <button
                   className="btn btn-primary mt-2 "
                   style={{ flexBasis: "15%" }}>
@@ -272,6 +289,7 @@ const Home = ({ correoUsuario }) => {
                 <tr>
                   <th>Número</th>
                   <th>Descripción</th>
+                  <th>Denunciante</th>
                   <th>Hecho</th>
                   <th>Instructor</th>
                   <th>Evento</th>
@@ -288,6 +306,7 @@ const Home = ({ correoUsuario }) => {
                   <tr key={list.id}>
                     <td>{list.numero}</td>
                     <td>{list.descripcion}</td>
+                    <td>{list.denunciante}</td>
                     <td>{list.hecho}</td>
                     <td>{list.instructor}</td>
                     <td>{list.evento}</td>
