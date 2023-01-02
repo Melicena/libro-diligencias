@@ -86,7 +86,7 @@ const Home = ({ correoUsuario }) => {
         querySnapshot.forEach((doc) => {
           docs.push({ ...doc.data(), id: doc.id });
         });
-        setLista(docs.sort((a, b) => a.hecho - b.hecho));
+        setLista(docs.sort((a, b) => a.numero - b.numero));
       } catch (error) {
         console.log(error);
       }
