@@ -12,6 +12,7 @@ import {
   deleteDoc,
   setDoc,
 } from "firebase/firestore";
+import { estados, evento } from "../data";
 
 const auth = getAuth(firebase);
 const db = getFirestore(firebase);
@@ -24,7 +25,7 @@ const Home = ({ correoUsuario }) => {
     instructor: "",
     denunciante: "",
     evento: "",
-    estado: "Abiertas",
+    estado: "",
     a: "",
     b: "",
     c: "",
@@ -85,7 +86,7 @@ const Home = ({ correoUsuario }) => {
         querySnapshot.forEach((doc) => {
           docs.push({ ...doc.data(), id: doc.id });
         });
-        setLista(docs.sort((a, b) => b.numero - a.numero));
+        setLista(docs.sort((a, b) => a.hecho - b.hecho));
       } catch (error) {
         console.log(error);
       }
@@ -104,14 +105,12 @@ const Home = ({ correoUsuario }) => {
           instructor: dgs.instructor.toUpperCase(),
           evento: dgs.evento.toUpperCase(),
           estado: dgs.estado.toUpperCase(),
-          denunciante: dgs.denunciante.toUpperCase()
+          denunciante: dgs.denunciante.toUpperCase(),
         });
-
       } catch (error) {
         console.log(error);
       }
-    }
-    else {
+    } else {
       await setDoc(doc(db, "diligencias", dgsId), {
         numero: dgs.numero.toUpperCase(),
         descripcion: dgs.descripcion.toUpperCase(),
@@ -119,11 +118,11 @@ const Home = ({ correoUsuario }) => {
         instructor: dgs.instructor.toUpperCase(),
         estado: dgs.estado.toUpperCase(),
         evento: dgs.evento.toUpperCase(),
-        denunciante: dgs.denunciante.toUpperCase()
-      })
+        denunciante: dgs.denunciante.toUpperCase(),
+      });
     }
     setDgs({ ...valorInicial });
-    setDgsId("")
+    setDgsId("");
     const getLista = async () => {
       try {
         const querySnapshot = await getDocs(collection(db, "diligencias"));
@@ -137,7 +136,6 @@ const Home = ({ correoUsuario }) => {
       }
     };
     getLista();
-
   };
 
   const deleteDgs = async (id) => {
@@ -159,11 +157,11 @@ const Home = ({ correoUsuario }) => {
 
   const getOne = async (id) => {
     try {
-      const docRef = doc(db, "diligencias", id)
-      const docSnap = await getDoc(docRef)
-      setDgs(docSnap.data())
+      const docRef = doc(db, "diligencias", id);
+      const docSnap = await getDoc(docRef);
+      setDgs(docSnap.data());
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
 
@@ -174,7 +172,6 @@ const Home = ({ correoUsuario }) => {
   }, [dgsId]);
 
   return (
-    
     <div className="container">
       <div className="row">
         <div className="col-md-8">
@@ -199,7 +196,8 @@ const Home = ({ correoUsuario }) => {
             <div className="card card-body">
               <div
                 className="form-group"
-                style={{ display: "flex", flexWrap: "wrap" }}>
+                style={{ display: "flex", flexWrap: "wrap" }}
+              >
                 <input
                   type="text"
                   name="numero"
@@ -207,7 +205,9 @@ const Home = ({ correoUsuario }) => {
                   placeholder="Número"
                   onChange={capturarInputs}
                   value={dgs.numero}
-                  style={{ flexBasis: "10%" }} required/>
+                  style={{ flexBasis: "10%" }}
+                  required
+                />
                 <input
                   type="text"
                   name="descripcion"
@@ -215,7 +215,8 @@ const Home = ({ correoUsuario }) => {
                   placeholder="Descripción"
                   onChange={capturarInputs}
                   value={dgs.descripcion}
-                  style={{ flexBasis: "72%" }} />
+                  style={{ flexBasis: "72%" }}
+                />
                 <input
                   type="text"
                   name="hecho"
@@ -223,15 +224,17 @@ const Home = ({ correoUsuario }) => {
                   placeholder="Número de hecho"
                   onChange={capturarInputs}
                   value={dgs.hecho}
-                  style={{ flexBasis: "15%" }} />
-                   <input
+                  style={{ flexBasis: "15%" }}
+                />
+                <input
                   type="text"
                   name="denunciante"
                   className="form-control mt-2"
                   placeholder="Denunciante"
                   onChange={capturarInputs}
                   value={dgs.denunciante}
-                  style={{ flexBasis: "30%" }} />
+                  style={{ flexBasis: "30%" }}
+                />
                 <input
                   type="text"
                   name="instructor"
@@ -239,29 +242,57 @@ const Home = ({ correoUsuario }) => {
                   placeholder="Instructor"
                   onChange={capturarInputs}
                   value={dgs.instructor}
-                  style={{ flexBasis: "15%" }} />
-                <input
+                  style={{ flexBasis: "15%" }}
+                />
+                {/* <input
                   type="text"
                   name="evento"
                   className="form-control mt-2 mx-1"
                   placeholder="Eventos (opcional)"
                   onChange={capturarInputs}
                   value={dgs.evento}
-                  style={{ flexBasis: "20%" }} />
-                   <input
+                  style={{ flexBasis: "20%" }}
+                /> */}
+                <select
+                  class="form-select mt-2 mx-1"
+                  aria-label="Default select example"
+                  onChange={capturarInputs}
+                  name="evento"
+                  style={{ flexBasis: "15%" }}
+                >
+                  <option selected>Evento</option>
+                  {evento.map(evento => (
+                    <option value={evento}>{evento}</option>
+                  ))}
+                </select>
+                {/* <input
                   type="text"
                   name="estado"
                   className="form-control mt-2 mx-1"
                   placeholder="Estado"
                   onChange={capturarInputs}
                   value={dgs.estado}
-                  style={{ flexBasis: "15%" }} />
+                  style={{ flexBasis: "15%" }}
+                /> */}
+                <select
+                  class="form-select mt-2 mx-1"
+                  aria-label="Default select example"
+                  onChange={capturarInputs}
+                  name="estado"
+                  style={{ flexBasis: "15%" }}
+                >
+                  <option selected>Estado</option>
+                  <option value={estados[0]}>{estados[0]}</option>
+                  <option value={estados[1]}>{estados[1]}</option>
+                  <option value={estados[2]}>{estados[2]}</option>
+                  <option value={estados[3]}>{estados[3]}</option>
+                </select>
                 <button
                   className="btn btn-primary mt-2 "
-                  style={{ flexBasis: "15%" }}>
+                  style={{ flexBasis: "15%" }}
+                >
                   {dgsId === "" ? "Insertar" : "Actualizar"}
                 </button>
-
               </div>
             </div>
           </form>
@@ -296,13 +327,10 @@ const Home = ({ correoUsuario }) => {
                   <th>Estado</th>
                   <th>Acciones</th>
                 </tr>
-
               </thead>
 
               <tbody>
-
                 {filtrada.map((list) => (
-
                   <tr key={list.id}>
                     <td>{list.numero}</td>
                     <td>{list.descripcion}</td>
@@ -314,16 +342,17 @@ const Home = ({ correoUsuario }) => {
                     <td>
                       <button
                         className="btn btn-danger"
-                        onClick={() => deleteDgs(list.id)}>
+                        onClick={() => deleteDgs(list.id)}
+                      >
                         Eliminar
                       </button>
 
                       <button
                         className="btn btn-success m-1"
-                        onClick={() => setDgsId(list.id)}>
+                        onClick={() => setDgsId(list.id)}
+                      >
                         Editar
                       </button>
-
                     </td>
                   </tr>
                 ))}
