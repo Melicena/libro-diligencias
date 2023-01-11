@@ -39,21 +39,21 @@ const Home = ({ correoUsuario }) => {
   const [filtro, setFiltro] = useState("");
   const [filtrada, setFiltrada] = useState([]);
 
-  useEffect(() => {
-    const getLista = async () => {
-      try {
-        const querySnapshot = await getDocs(collection(db, "diligencias"));
-        const docs = [];
-        querySnapshot.forEach((doc) => {
-          docs.push({ ...doc.data(), id: doc.id });
-        });
-        setLista(docs.sort((a, b) => b.numero - a.numero));
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getLista();
-  }, []);
+  // useEffect(() => {
+  //   const getLista = async () => {
+  //     try {
+  //       const querySnapshot = await getDocs(collection(db, "diligencias"));
+  //       const docs = [];
+  //       querySnapshot.forEach((doc) => {
+  //         docs.push({ ...doc.data(), id: doc.id });
+  //       });
+  //       setLista(docs.sort((a, b) => b.numero - a.numero));
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+  //   getLista();
+  // }, []);
 
   useEffect(() => {
     if (filtro !== "") {
@@ -92,7 +92,13 @@ const Home = ({ correoUsuario }) => {
       }
     };
     getLista();
+
   }, []);
+
+  function reset() {
+    document.getElementById("evento").selectedIndex = 0;
+    document.getElementById("estado").selectedIndex = 0;
+  }
 
   const guardarDatos = async (e) => {
     e.preventDefault();
@@ -135,7 +141,9 @@ const Home = ({ correoUsuario }) => {
         console.log(error);
       }
     };
+    reset();
     getLista();
+
   };
 
   const deleteDgs = async (id) => {
@@ -192,7 +200,7 @@ const Home = ({ correoUsuario }) => {
       <div className="row">
         <div className=" text-center">
           <h3>Ingresar diligencias</h3>
-          <form onSubmit={guardarDatos}>
+          <form name="form" onSubmit={guardarDatos}>
             <div className="card card-body">
               <div
                 className="form-group"
@@ -244,17 +252,9 @@ const Home = ({ correoUsuario }) => {
                   value={dgs.instructor}
                   style={{ flexBasis: "15%" }}
                 />
-                {/* <input
-                  type="text"
-                  name="evento"
-                  className="form-control mt-2 mx-1"
-                  placeholder="Eventos (opcional)"
-                  onChange={capturarInputs}
-                  value={dgs.evento}
-                  style={{ flexBasis: "20%" }}
-                /> */}
                 <select
                   class="form-select mt-2 mx-1"
+                  id="evento"
                   aria-label="Default select example"
                   onChange={capturarInputs}
                   name="evento"
@@ -265,17 +265,9 @@ const Home = ({ correoUsuario }) => {
                     <option value={evento}>{evento}</option>
                   ))}
                 </select>
-                {/* <input
-                  type="text"
-                  name="estado"
-                  className="form-control mt-2 mx-1"
-                  placeholder="Estado"
-                  onChange={capturarInputs}
-                  value={dgs.estado}
-                  style={{ flexBasis: "15%" }}
-                /> */}
                 <select
                   class="form-select mt-2 mx-1"
+                  id="estado"
                   aria-label="Default select example"
                   onChange={capturarInputs}
                   name="estado"

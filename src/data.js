@@ -1,5 +1,3 @@
-import React from "react";
-
 export const estados = ["Abiertas", "Archivadas", "Enviadas", "Traspasadas"];
 
 export const evento = [
@@ -18,5 +16,6 @@ export const evento = [
   "Turismo seguro",
   "USECIA",
   "Vías de Comunicación",
+  "VIOGEN",
   "Violencia en el Deporte",
 ];
