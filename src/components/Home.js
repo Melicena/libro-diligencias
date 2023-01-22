@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import moment from 'moment';
 import firebase from "../credenciales";
 import { getAuth, signOut } from "firebase/auth";
 import {
@@ -26,7 +26,7 @@ const Home = ({ correoUsuario }) => {
     denunciante: "",
     evento: "",
     estado: "",
-    a: "",
+    a: moment().format('L'),  // FECHA
     b: "",
     c: "",
     d: false,
@@ -38,22 +38,6 @@ const Home = ({ correoUsuario }) => {
   const [dgsId, setDgsId] = useState("");
   const [filtro, setFiltro] = useState("");
   const [filtrada, setFiltrada] = useState([]);
-
-  // useEffect(() => {
-  //   const getLista = async () => {
-  //     try {
-  //       const querySnapshot = await getDocs(collection(db, "diligencias"));
-  //       const docs = [];
-  //       querySnapshot.forEach((doc) => {
-  //         docs.push({ ...doc.data(), id: doc.id });
-  //       });
-  //       setLista(docs.sort((a, b) => b.numero - a.numero));
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-  //   getLista();
-  // }, []);
 
   useEffect(() => {
     if (filtro !== "") {
@@ -76,6 +60,7 @@ const Home = ({ correoUsuario }) => {
   const capturarInputs = (e) => {
     const { name, value } = e.target;
     setDgs({ ...dgs, [name]: value });
+    console.log(e.target.value);
   };
 
   useEffect(() => {
@@ -112,6 +97,7 @@ const Home = ({ correoUsuario }) => {
           evento: dgs.evento.toUpperCase(),
           estado: dgs.estado.toUpperCase(),
           denunciante: dgs.denunciante.toUpperCase(),
+          a: dgs.a // FECHA
         });
       } catch (error) {
         console.log(error);
@@ -125,6 +111,7 @@ const Home = ({ correoUsuario }) => {
         estado: dgs.estado.toUpperCase(),
         evento: dgs.evento.toUpperCase(),
         denunciante: dgs.denunciante.toUpperCase(),
+        a: dgs.a // FECHA
       });
     }
     setDgs({ ...valorInicial });
@@ -180,7 +167,7 @@ const Home = ({ correoUsuario }) => {
   }, [dgsId]);
 
   return (
-    <div className="container">
+    <div className="container-fluid">
       <div className="row">
         <div className="col-md-8">
           <p className="mt-2">
@@ -213,7 +200,7 @@ const Home = ({ correoUsuario }) => {
                   placeholder="Número"
                   onChange={capturarInputs}
                   value={dgs.numero}
-                  style={{ flexBasis: "10%" }}
+                  style={{ flexBasis: "9%" }}
                   required
                 />
                 <input
@@ -223,25 +210,35 @@ const Home = ({ correoUsuario }) => {
                   placeholder="Descripción"
                   onChange={capturarInputs}
                   value={dgs.descripcion}
-                  style={{ flexBasis: "72%" }}
+                  style={{ flexBasis: "60%" }}
                 />
                 <input
                   type="text"
                   name="hecho"
-                  className="form-control mt-2"
+                  className="form-control mt-2 ms-1 me-1"
                   placeholder="Número de hecho"
                   onChange={capturarInputs}
                   value={dgs.hecho}
-                  style={{ flexBasis: "15%" }}
+                  style={{ flexBasis: "12%" }}
+                />
+                <input
+                  type="text"
+                  name="a"
+                  className="form-control mt-2"
+                  placeholder="dd-mm-yyyy"
+                  onChange={capturarInputs}
+                  value={dgs.a}
+                  style={{ flexBasis: "12%" }}
+                  min="1997-01-01" max="2030-12-31"
                 />
                 <input
                   type="text"
                   name="denunciante"
                   className="form-control mt-2"
-                  placeholder="Denunciante"
+                  placeholder="Denunciante/Denunciado"
                   onChange={capturarInputs}
                   value={dgs.denunciante}
-                  style={{ flexBasis: "30%" }}
+                  style={{ flexBasis: "33%" }}
                 />
                 <input
                   type="text"
@@ -253,34 +250,34 @@ const Home = ({ correoUsuario }) => {
                   style={{ flexBasis: "15%" }}
                 />
                 <select
-                  class="form-select mt-2 mx-1"
+                  className="form-select mt-2 mx-1"
                   id="evento"
                   aria-label="Default select example"
                   onChange={capturarInputs}
                   name="evento"
                   style={{ flexBasis: "15%" }}
                 >
-                  <option selected>Evento</option>
+                  <option value>Evento</option>
                   {evento.map(evento => (
                     <option value={evento}>{evento}</option>
                   ))}
                 </select>
                 <select
-                  class="form-select mt-2 mx-1"
+                  className="form-select mt-2 mx-1"
                   id="estado"
                   aria-label="Default select example"
                   onChange={capturarInputs}
                   name="estado"
                   style={{ flexBasis: "15%" }}
                 >
-                  <option selected>Estado</option>
+                  <option value>Estado</option>
                   <option value={estados[0]}>{estados[0]}</option>
                   <option value={estados[1]}>{estados[1]}</option>
                   <option value={estados[2]}>{estados[2]}</option>
                   <option value={estados[3]}>{estados[3]}</option>
                 </select>
                 <button
-                  className="btn btn-primary mt-2 "
+                  className="btn btn-primary mt-2 mx-auto"
                   style={{ flexBasis: "15%" }}
                 >
                   {dgsId === "" ? "Insertar" : "Actualizar"}
@@ -306,18 +303,19 @@ const Home = ({ correoUsuario }) => {
             </div>
           </div>
 
-          <div className="container card">
+          <div className="container-fluid card">
             <table>
               <thead>
                 <tr>
-                  <th>Número</th>
-                  <th>Descripción</th>
-                  <th>Denunciante</th>
-                  <th>Hecho</th>
-                  <th>Instructor</th>
-                  <th>Evento</th>
-                  <th>Estado</th>
-                  <th>Acciones</th>
+                  <th className="col-1">Número</th>
+                  <th className="col-1">Descripción</th>
+                  <th className="col-1">Denunciante/Denunciado</th>
+                  <th className="col-1">Hecho</th>
+                  <th className="col-1">Fecha</th>
+                  <th className="col-1">Instructor</th>
+                  <th className="col-1">Evento</th>
+                  <th className="col-1">Estado</th>
+                  <th className="col-1">Acciones</th>
                 </tr>
               </thead>
 
@@ -328,6 +326,7 @@ const Home = ({ correoUsuario }) => {
                     <td>{list.descripcion}</td>
                     <td>{list.denunciante}</td>
                     <td>{list.hecho}</td>
+                    <td>{list.a}</td>
                     <td>{list.instructor}</td>
                     <td>{list.evento}</td>
                     <td>{list.estado}</td>
