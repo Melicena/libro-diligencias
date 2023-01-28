@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import moment from 'moment';
 import firebase from "../credenciales";
 import { getAuth, signOut } from "firebase/auth";
 import {
@@ -18,6 +17,12 @@ const auth = getAuth(firebase);
 const db = getFirestore(firebase);
 
 const Home = ({ correoUsuario }) => {
+
+  let date = new Date()
+ let day = `${(date.getDate())}`.padStart(2,'0');
+ let month = `${(date.getMonth()+1)}`.padStart(2,'0');
+ let year = date.getFullYear();
+ 
   const valorInicial = {
     numero: "",
     descripcion: "",
@@ -26,7 +31,7 @@ const Home = ({ correoUsuario }) => {
     denunciante: "",
     evento: "",
     estado: "",
-    a: moment().format('L'),  // FECHA
+    a: `${day}/${month}/${year}`,  // FECHA
     b: "",
     c: "",
     d: false,
@@ -71,8 +76,8 @@ const Home = ({ correoUsuario }) => {
         querySnapshot.forEach((doc) => {
           docs.push({ ...doc.data(), id: doc.id });
         });
-   //     setLista(docs.sort((a, b) => b.numero - a.numero));  // DESCOMENTAR PARA HACER BACKUPS
-        console.log(docs);
+        setLista(docs.sort((a, b) => b.numero - a.numero));  
+    //    console.log(docs); // DESCOMENTAR PARA HACER BACKUPS
 
       } catch (error) {
         console.log(error);
