@@ -1,0 +1,850 @@
+[
+    {
+        "evento": "",
+        "denunciante": "J46858L // JUAN SALMERÓN RODRÍGUEZ",
+        "a": "01/27/2023",
+        "descripcion": "EXTRAVÍO LIBRO DE FAMÍLIA",
+        "hecho": "116864890",
+        "numero": "84",
+        "estado": "ARCHIVADAS",
+        "instructor": "J46858L",
+        "id": "vuU2mUwEdO596Ma7PfBj"
+    },
+    {
+        "numero": "83",
+        "evento": "DROGAS/OCIO",
+        "hecho": "116861302/116861604",
+        "a": "01/27/2023",
+        "descripcion": "DENUNCIA 4/15 DROGA",
+        "instructor": "J46858L",
+        "estado": "ENVIADAS",
+        "denunciante": "M83446P Y C47345C // SERGIO IBÁNEZ CARA",
+        "id": "shhHJoAY8ChlmuhBjqDg"
+    },
+    {
+        "evento": "VÍAS DE COMUNICACIÓN",
+        "numero": "82",
+        "instructor": "J46858L",
+        "descripcion": "DENUNCIA CARECER ITV",
+        "denunciante": "B23057T Y J46858L//JUAN MANUEL GÓMEZ SANTIAGO ",
+        "estado": "",
+        "a": "01/27/2023",
+        "hecho": "116826741",
+        "id": "bCseKAzCiMMqvEa4aZNm"
+    },
+    {
+        "evento": "VÍAS DE COMUNICACIÓN",
+        "descripcion": "DENUNCIA CARECER DE ITV",
+        "instructor": "J46858L",
+        "denunciante": "J46858L Y B23057T // ANTONIO YACET BENAVENTE",
+        "estado": "",
+        "a": "01/27/2023",
+        "hecho": "116830980",
+        "numero": "81",
+        "id": "DfQfkeTlFsXNbE8ogi5w"
+    },
+    {
+        "instructor": "J46858L",
+        "a": "01/27/2023",
+        "denunciante": "4450CNX",
+        "estado": "",
+        "evento": "VÍAS DE COMUNICACIÓN",
+        "numero": "80",
+        "hecho": "116857017",
+        "descripcion": "DENUNCIA RGC",
+        "id": "sIVJ5QyCtylFPt3aqveM"
+    },
+    {
+        "estado": "",
+        "denunciante": "4450CNX",
+        "descripcion": "DENUNCIA RGC",
+        "a": "01/27/2023",
+        "numero": "79",
+        "hecho": "116857027",
+        "evento": "VÍAS DE COMUNICACIÓN",
+        "instructor": "J46858L",
+        "id": "2DeSEoEBFteCrpnMeeam"
+    },
+    {
+        "estado": "",
+        "descripcion": "DENUNCIA RGC",
+        "hecho": "116857598",
+        "denunciante": "4450CNX",
+        "numero": "78",
+        "evento": "VÍAS DE COMUNICACIÓN",
+        "instructor": "J46858L",
+        "a": "01/27/2023",
+        "id": "aVF0D7Zn0wUn8RdVuo1N"
+    },
+    {
+        "numero": "77",
+        "descripcion": "DENUNCIA RGC",
+        "denunciante": "4450CNX",
+        "hecho": "116857446",
+        "a": "01/27/2023",
+        "instructor": "J46858L",
+        "estado": "",
+        "evento": "VÍAS DE COMUNICACIÓN",
+        "id": "hCsTou8e4bphLlc3oI1m"
+    },
+    {
+        "estado": "",
+        "denunciante": "4450CNX",
+        "numero": "76",
+        "hecho": "116857232",
+        "instructor": "J46858L",
+        "descripcion": "DENUNCIA POR ESTACIONAMIENTO",
+        "evento": "VÍAS DE COMUNICACIÓN",
+        "a": "01/27/2023",
+        "id": "LSpjtkP62Ys4JhjFTFMv"
+    },
+    {
+        "evento": "VÍAS DE COMUNICACIÓN",
+        "estado": "",
+        "denunciante": "4450CNX",
+        "numero": "75",
+        "a": "01/27/2023",
+        "instructor": "J46858L",
+        "hecho": "116857027",
+        "descripcion": "DENUNCIA CARECER ITV",
+        "id": "4EcNq45uXipR2ONCas0j"
+    },
+    {
+        "a": "01/26/2023",
+        "numero": "74",
+        "estado": "",
+        "hecho": "116849373",
+        "instructor": "J46858L",
+        "descripcion": "VIOGEN",
+        "denunciante": "B23057T Y J46858L // OVIDIU NICOLAE TOMUS",
+        "evento": "VIOGEN",
+        "id": "K1TmuzgFu5DWk9JysGaF"
+    },
+    {
+        "denunciante": "GADOR GOMEZ VILLEGAS",
+        "a": "01/25/2023",
+        "estado": "ABIERTAS",
+        "numero": "72",
+        "evento": "",
+        "descripcion": "EXTRAVIO DE TELEFONO MOVIL",
+        "instructor": "T14469T",
+        "hecho": "116822861",
+        "id": "sj9PivvqsxIZtoYkYJkk"
+    },
+    {
+        "hecho": "116795291",
+        "estado": "ABIERTAS",
+        "denunciante": "FRANCISCO ALEXSANDER BARRANCO OSKINA",
+        "instructor": "C47345C",
+        "numero": "71",
+        "descripcion": "ESTAFA",
+        "evento": "",
+        "a": "01/23/2023",
+        "id": "M4hVFUSX17BWHrtYOvmy"
+    },
+    {
+        "denunciante": "ENCARNACION UTRERA CORTES",
+        "a": "01/23/2023",
+        "instructor": "C47345C",
+        "evento": "",
+        "hecho": "116791741",
+        "descripcion": "ESTRAVIO TELEFONO MOVIL",
+        "estado": "ABIERTAS",
+        "numero": "70",
+        "id": "ydtAseM76BMn6y69ZyNy"
+    },
+    {
+        "numero": "69",
+        "instructor": "C47345C",
+        "denunciante": "ALEJANDRO MARTINEZ MARCH",
+        "a": "01/23/2023",
+        "estado": "ENVIADAS",
+        "evento": "USECIA",
+        "descripcion": "DENUNCIA 4/15 DROGA",
+        "hecho": "116788165",
+        "id": "G54XfxROgC2O5y0AXS5N"
+    },
+    {
+        "numero": "68",
+        "instructor": "C47345C",
+        "evento": "USECIA",
+        "denunciante": "CARLOS JESUS UTRERA CORTES",
+        "a": "01/23/2023",
+        "estado": "ENVIADAS",
+        "descripcion": "DENUNCIA R.G. CIRCULACION",
+        "hecho": "116786457",
+        "id": "K9f4pRYidW7J1baoW454"
+    },
+    {
+        "denunciante": "FELIX PARRON TORRES",
+        "numero": "67",
+        "a": "01/23/2023",
+        "hecho": "116784448",
+        "estado": "ENVIADAS",
+        "instructor": "C47345C",
+        "descripcion": "DENUNCIA ITV",
+        "evento": "USECIA",
+        "id": "c9f5R4Nhuat1InLzZNSM"
+    },
+    {
+        "hecho": "116771438",
+        "denunciante": "C21300R / H25659X,/ MOHAMED MOUBARIK CHAHBI",
+        "estado": "ENVIADAS",
+        "instructor": "C21300R",
+        "evento": "",
+        "descripcion": "INF. TRÁFICO SIN PERMISO CONDUCIR",
+        "numero": "66",
+        "id": "cFVhJlPLnjtuBns0ABET"
+    },
+    {
+        "evento": "",
+        "instructor": "H25659X Y C21300R",
+        "numero": "65",
+        "denunciante": "DE OFICIO / MOHAMED MOUBARIK CHAHBI",
+        "estado": "ENVIADAS",
+        "hecho": "116771034",
+        "descripcion": "DELITO CONTRA SEGURIDAD VIAL",
+        "id": "NdgH5pybcVZ9YbO8zH9o"
+    },
+    {
+        "a": "",
+        "evento": "",
+        "denunciante": "B23037T / J46858L",
+        "numero": "64",
+        "hecho": "116763548",
+        "instructor": "C21300R",
+        "estado": "ENVIADAS",
+        "descripcion": "DENUNCIA TRAFICO CHALECO",
+        "id": "j9SD3iTHBt76d3hYzRLG"
+    },
+    {
+        "instructor": "C21300R",
+        "descripcion": "L.O. 4/2015. NAVAJA",
+        "estado": "ENVIADAS",
+        "evento": "",
+        "denunciante": "B23037T / J46858L",
+        "hecho": "116763127",
+        "numero": "63",
+        "id": "0qM3aF6FwLZReGXrKP4z"
+    },
+    {
+        "instructor": "C21300R",
+        "evento": "",
+        "descripcion": "L.O. 4/2015. NAVAJA",
+        "estado": "ENVIADAS",
+        "hecho": "116761992",
+        "denunciante": "B23037T / J46858L",
+        "numero": "62",
+        "id": "fqooYkVhNNhVCr8MdZ96"
+    },
+    {
+        "hecho": "116762311",
+        "denunciante": "JOSE SANTIAGO CORTÉS",
+        "instructor": "C21300R",
+        "estado": "ARCHIVADAS",
+        "evento": "",
+        "descripcion": "EXTRAVIO DNI",
+        "numero": "61",
+        "id": "s7ouJ9jgVeRKgai4SCT7"
+    },
+    {
+        "estado": "ARCHIVADAS",
+        "instructor": "C21300R",
+        "numero": "60",
+        "hecho": "116762061",
+        "evento": "",
+        "descripcion": "EXTRAVIO DNI",
+        "denunciante": "VERONICA CORTES HEREDIA",
+        "id": "Gd43XuNS6vJF6yTy0dLH"
+    },
+    {
+        "hecho": "116761126",
+        "evento": "",
+        "denunciante": "JESUS FERNÁNDEZ DE LA CASA",
+        "descripcion": "EXTRAVIO TELÉFONO MÓVIL",
+        "numero": "59",
+        "instructor": "H25659X",
+        "estado": "ABIERTAS",
+        "id": "OLz5OEj0cdvA4Te24WBU"
+    },
+    {
+        "evento": "USECIA",
+        "numero": "58",
+        "denunciante": "USECIA",
+        "instructor": "C21300R",
+        "hecho": "116759680",
+        "estado": "ENVIADAS",
+        "descripcion": "DENUNCIA NAVAJA USECIA",
+        "id": "ZrCVOA5DdNhh80JNbD8A"
+    },
+    {
+        "denunciante": "",
+        "evento": "AGRESIONES-ATENTADOS AGENTES",
+        "hecho": "116729210",
+        "estado": "ENVIADAS",
+        "instructor": "B19465D",
+        "descripcion": "INF. FALTA RESPETO",
+        "numero": "57",
+        "id": "Wtb9fGQZXw7OBcow6bu3"
+    },
+    {
+        "denunciante": "",
+        "evento": "",
+        "instructor": "H25659X",
+        "estado": "ENVIADAS",
+        "numero": "56",
+        "descripcion": "AMPLIATORIAS 1157/2022 INFORME TÉCNICO INCENDIO FORESTAL",
+        "hecho": "116371176",
+        "id": "Y28Ffhk5aRR6vtWQ6vra"
+    },
+    {
+        "estado": "ENVIADAS",
+        "hecho": "116715600 / 116715740",
+        "denunciante": "DAVID RUIZ RIVERA",
+        "instructor": "M83446P",
+        "descripcion": "DENUNCIA 4/15 DROGA",
+        "numero": "55",
+        "evento": "DROGAS/OCIO",
+        "id": "uUjrk6OZnobB1HQJ9XXm"
+    },
+    {
+        "denunciante": "JOSE PADILLA RAMOS",
+        "estado": "ENVIADAS",
+        "descripcion": "DENUNCIA 4/15 DROGA",
+        "evento": "DROGAS/OCIO",
+        "instructor": "M83446P",
+        "hecho": "116714976 / 116715150",
+        "numero": "54",
+        "id": "kwOWk6A9GB1dV7MbGZ7d"
+    },
+    {
+        "evento": "",
+        "numero": "53",
+        "denunciante": "OUSMANE BARRY",
+        "hecho": "116714469",
+        "descripcion": "DAÑOS EN VEHÍCULO OFICIAL",
+        "estado": "ABIERTAS",
+        "instructor": "H25659X",
+        "id": "BOK7xV3AeiQcykXjaOnS"
+    },
+    {
+        "descripcion": "INF. TENENCIA DROGAS (MARIHUANA)",
+        "instructor": "M83446P",
+        "evento": "DROGAS/OCIO",
+        "estado": "ENVIADAS",
+        "hecho": "116714207 116714595",
+        "denunciante": "OUSMANE BARRY",
+        "numero": "52",
+        "id": "O5YWSXcpiPnEjn1rQ6bN"
+    },
+    {
+        "numero": "51",
+        "estado": "ENVIADAS",
+        "instructor": "M83446P",
+        "evento": "",
+        "hecho": "116711906",
+        "descripcion": "DELITO LEVE DE DAÑOS",
+        "denunciante": "CHRISTINE BERIL",
+        "id": "YqAlDfM69cKiIywFM4jA"
+    },
+    {
+        "descripcion": "DELITO DE DESOBEDIENCIA Y RESISTENCIA",
+        "denunciante": "OUSMANE BARRY",
+        "hecho": "116706561",
+        "estado": "ENVIADAS",
+        "evento": "AGRESIONES-ATENTADOS AGENTES",
+        "instructor": "M83446P",
+        "numero": "50",
+        "id": "UbLvoErbtOBWUevH1keU"
+    },
+    {
+        "denunciante": "SANDRA YANIRA ESCOBAR",
+        "instructor": "C21300R",
+        "descripcion": "GESTIONES PARA LOCALIZAR A PERSONA DESAPARECIDA",
+        "evento": "",
+        "estado": "ABIERTAS",
+        "hecho": "116702903",
+        "numero": "49",
+        "id": "fOW4heVHaxTo5JxRBfSV"
+    },
+    {
+        "denunciante": "SANDRA YANIRA ESCOBAR",
+        "evento": "EVENTO",
+        "estado": "TRASPASADAS",
+        "instructor": "C21300R",
+        "descripcion": "DESAPARICIÓN DE PERSONA MENOR DE EDAD",
+        "numero": "48",
+        "hecho": "116687073",
+        "id": "Y5HzyqWrqDILQxTmu1TY"
+    },
+    {
+        "estado": "ENVIADAS",
+        "evento": "DROGAS/OCIO",
+        "instructor": "Q12816X",
+        "descripcion": "INF. 4/15 HACHIS",
+        "denunciante": "J46858L / B23057T",
+        "hecho": "116663535 / 116663661",
+        "numero": "47",
+        "id": "M6f0Edzr8Cx6VCDg0c9B"
+    },
+    {
+        "evento": "DROGAS/OCIO",
+        "hecho": "116662640 / 116663074",
+        "descripcion": "INF. 4/15 HACHIS",
+        "instructor": "Q12816X",
+        "estado": "ENVIADAS",
+        "numero": "46",
+        "denunciante": "J46858L / B23057T",
+        "id": "G8IucvteXvDCsw24zjiq"
+    },
+    {
+        "evento": "VÍAS DE COMUNICACIÓN",
+        "denunciante": "J46858L / B23057T",
+        "instructor": "Q12816X",
+        "estado": "ENVIADAS",
+        "descripcion": "INFRC. R. G. VEHICULOS ITV",
+        "hecho": "116662351",
+        "numero": "45",
+        "id": "i5NBzeTcNLNUBn9oWJdX"
+    },
+    {
+        "evento": "",
+        "denunciante": "FRANCISCO JOSÉ SALMERÓN UCLES",
+        "descripcion": "EXTRAVÍO DE TEÉFONO KMÓVIL",
+        "hecho": "116661170",
+        "estado": "ABIERTAS",
+        "instructor": "H25659X",
+        "numero": "44",
+        "id": "gOYJ9snMeWm2kcsgYQVl"
+    },
+    {
+        "denunciante": "ÁNGEL SANTIAGO FERNÁNDEZ",
+        "estado": "ABIERTAS",
+        "instructor": "B23057T",
+        "numero": "43",
+        "descripcion": "DETENCIÓN POR TENENCIA ILÍCITA DE ARMAS",
+        "hecho": "116653544",
+        "evento": "EVENTO",
+        "id": "lGhAsmpeeRwDChbPqIBu"
+    },
+    {
+        "numero": "42",
+        "evento": "",
+        "estado": "ABIERTAS",
+        "instructor": "C21300R",
+        "descripcion": "DELITO DE HURTO DE USO DE VEHÍCULO",
+        "hecho": "",
+        "denunciante": "C21300R Y B19465D",
+        "id": "hHnUZCkqv95oBkPyiXEO"
+    },
+    {
+        "descripcion": "INF. REGLAMENTO GENERAL DE CONDUCTORES",
+        "denunciante": "MOHAMED MOUBARIK CHAHBI",
+        "estado": "ENVIADAS",
+        "instructor": "M83446P",
+        "evento": "VÍAS DE COMUNICACIÓN",
+        "numero": "41",
+        "hecho": "",
+        "id": "4jc3fRmROpOt3yjIdIV1"
+    },
+    {
+        "numero": "40",
+        "estado": "ENVIADAS",
+        "hecho": "116599585",
+        "denunciante": "JOSÉ ANTONIO CORTÉS CORTÉS",
+        "evento": "VÍAS DE COMUNICACIÓN",
+        "descripcion": "INFRACCIÓN TRÁFICO",
+        "instructor": "B23057T",
+        "id": "EV2gFIAWhEnK7wG4Hbal"
+    },
+    {
+        "instructor": "B23057T",
+        "numero": "39",
+        "hecho": "116599247",
+        "denunciante": "JOSE ANTONIO CORTÉS CORTÉS",
+        "estado": "",
+        "evento": "",
+        "descripcion": "INF 4/15 DESOBEDIENCIA ",
+        "id": "lr7u4sxBQR5zuz2rMPsr"
+    },
+    {
+        "denunciante": "JAVIER LÓPEZ HITA",
+        "evento": "",
+        "hecho": "116597558",
+        "instructor": "B23057T",
+        "estado": "",
+        "descripcion": "COMPARECENCIA NO PENAL DNI DAÑADO (DESTRUIDO)",
+        "numero": "38",
+        "id": "MtVVPYYoj7oOAHp7IrRE"
+    },
+    {
+        "estado": "ARCHIVADAS",
+        "evento": "",
+        "hecho": "116596105",
+        "descripcion": "EXTRAVÍO DNI",
+        "instructor": "B23057T",
+        "numero": "37",
+        "denunciante": "JUAN FRANCISCO GÓMEZ GÓMEZ",
+        "id": "PEIZMgKJhmBfNCsPRp3I"
+    },
+    {
+        "numero": "36",
+        "denunciante": "JUAN FRANCISCO GALDEANO GARCÍA",
+        "instructor": "J46858L",
+        "estado": "TRASPASADAS",
+        "evento": "",
+        "hecho": "116594438",
+        "descripcion": "DELITO ACOSO LABORAL",
+        "id": "CIxJlyor9lwmZTiUf2Zy"
+    },
+    {
+        "hecho": "116593001",
+        "denunciante": "AYOUB SALMOUN",
+        "evento": "",
+        "estado": "ABIERTAS",
+        "instructor": "B23057T",
+        "descripcion": "DELITO DE LESIONES (MENOS GRAVES)",
+        "numero": "35",
+        "id": "1exL7K4lu5BQvaiXCHBF"
+    },
+    {
+        "estado": "ARCHIVADAS",
+        "instructor": "M83446P",
+        "denunciante": "MOHAMED MOUBARIK CHAHBI",
+        "numero": "34",
+        "descripcion": "INF. TENENCIA DROGAS (HACHIS)",
+        "hecho": "116586294",
+        "evento": "DROGAS/OCIO",
+        "id": "eiZ0dQL2ZY3ssIAuP1nH"
+    },
+    {
+        "evento": "DROGAS/OCIO",
+        "estado": "ARCHIVADAS",
+        "numero": "33",
+        "denunciante": "FRANCISCO LUIS MOLIMNA TORRES",
+        "descripcion": "INF. TENENCIA DROGAS (HACHIS)",
+        "hecho": "116586119",
+        "instructor": "M83446P",
+        "id": "7c5lLi77axBpWr0ews4v"
+    },
+    {
+        "estado": "ENVIADAS",
+        "evento": "VÍAS DE COMUNICACIÓN",
+        "instructor": "M83446P",
+        "denunciante": "MOHAMED MOUBARIK CHAHBI",
+        "descripcion": "DELITO CONTRA LA SEGURIDAD DEL TRÁFICO (CONDUCIR SIN CARNET)",
+        "numero": "32",
+        "hecho": "",
+        "id": "o9ywAax3Lw8jPccdxtN2"
+    },
+    {
+        "hecho": "116557649",
+        "numero": "31",
+        "evento": "",
+        "estado": "ABIERTAS",
+        "descripcion": "COMPARECECNCIA INCUMPLIMIENTO OBLIGACIONES FAMILIARES",
+        "denunciante": "FATIMA SAMARA GONZÁLEZ SÁNCHEZ",
+        "instructor": "H25659X",
+        "id": "TNFyUaUepKI1pzEGiigJ"
+    },
+    {
+        "hecho": "116554131",
+        "denunciante": "ANTONIA VILLEGAS VILLEGAS",
+        "instructor": "H25659X",
+        "estado": "ABIERTAS",
+        "evento": "",
+        "descripcion": "MOLESTIAS VECINALES",
+        "numero": "30",
+        "id": "BScOC9y2DN5cd2nzZ4aO"
+    },
+    {
+        "estado": "ABIERTAS",
+        "denunciante": "ABDELFETTAH BOUKHARROUBA",
+        "evento": "",
+        "hecho": "116551723",
+        "numero": "29",
+        "instructor": "H25659X",
+        "descripcion": "LESIONES CON ARMA BLANCA",
+        "id": "HAJFVkyJQUHPnlXH2zTp"
+    },
+    {
+        "descripcion": "DETENCIÓN POR REQUISITORIA",
+        "numero": "28",
+        "denunciante": "AYOUB SALMON",
+        "hecho": "116536287",
+        "evento": "",
+        "instructor": "C21300R",
+        "estado": "ENVIADAS",
+        "id": "fhHtqrDkjT7FJkoMZZPi"
+    },
+    {
+        "instructor": "J46858L",
+        "estado": "ARCHIVADAS",
+        "numero": "27",
+        "descripcion": "INFRACCIÓN RG. CIRCULACIÓN (CHALECO REFLECTANTE)",
+        "denunciante": "JOSÉ VÁZQUEZ MORENO",
+        "evento": "VÍAS DE COMUNICACIÓN",
+        "hecho": "116525410",
+        "id": "FIjw8QXrg3AJJKEVLSbn"
+    },
+    {
+        "denunciante": "JOSÉ VÁZQUEZ MORENO",
+        "hecho": "116525488",
+        "evento": "VÍAS DE COMUNICACIÓN",
+        "descripcion": "INFRACCIÓN TRÁFICO CONDUCCIÓN NEGLIGENTE",
+        "estado": "ENVIADAS",
+        "numero": "26",
+        "instructor": "J46858L",
+        "id": "yAs31CRBJofOkkz9ELIx"
+    },
+    {
+        "descripcion": "INFRACCIÓN RG CIRCULACIÓN (DISTINTIVOS PELIGRO)",
+        "denunciante": "JOSÉ VÁZQUEZ MORENO",
+        "hecho": "116525516",
+        "instructor": "J46858L",
+        "evento": "VÍAS DE COMUNICACIÓN",
+        "estado": "ENVIADAS",
+        "numero": "25",
+        "id": "aQtCLiYSYlgFVa4jPTWn"
+    },
+    {
+        "hecho": "116495267",
+        "estado": "ENVIADAS",
+        "evento": "VÍAS DE COMUNICACIÓN",
+        "numero": "24",
+        "descripcion": "INFRACCIÓN ITV",
+        "instructor": "J46858L",
+        "denunciante": "JOSÉ VÁZQUEZ MORENO",
+        "id": "04qv2EFG3QssDSAc95lu"
+    },
+    {
+        "hecho": "116524836",
+        "numero": "23",
+        "evento": "DROGAS/OCIO",
+        "descripcion": "DENUNCIA TENENCIA DROGA",
+        "instructor": "J46858L",
+        "denunciante": "ALEJANDRO GABRIEL LUNGU",
+        "estado": "ENVIADAS",
+        "id": "EfVfcaPZQAgcEIUz6BKo"
+    },
+    {
+        "estado": "ARCHIVADAS",
+        "hecho": "116510392",
+        "denunciante": "GADOR DEL PILAR CESPEDES FERNANDEZ",
+        "instructor": "",
+        "evento": "VIOGEN",
+        "numero": "22",
+        "descripcion": "TRASPASO VIOGEN PJ HUERCAL (SOLO CONOCIMIENTO)",
+        "id": "m4z4gK8A8ek5G2e0NGzq"
+    },
+    {
+        "numero": "21",
+        "descripcion": "DELITO LEVE DE LESIONES",
+        "instructor": "H25659X",
+        "denunciante": "JOSE ANTONIO ESCOBOSA HERRERA",
+        "evento": "",
+        "hecho": "116516886",
+        "estado": "ABIERTAS",
+        "id": "Z9L6hoekW1uSced8yh8I"
+    },
+    {
+        "evento": "DROGAS/OCIO",
+        "hecho": "116516509",
+        "numero": "20",
+        "descripcion": "INFRACCIÓN POR TENENCIA DE MARIHUANA",
+        "estado": "ENVIADAS",
+        "instructor": "B23057T",
+        "denunciante": "JUAN DIEGO ROBLES PÉREZ",
+        "id": "ZrF0lSDnoTixkYXdm1KN"
+    },
+    {
+        "estado": "ENVIADAS",
+        "descripcion": "VIOLENCIA DE GÉNERO ",
+        "instructor": "C21300R",
+        "evento": "VIOGEN",
+        "denunciante": "SANDRA ISABEL RAMOS RAMOS",
+        "hecho": "116508681",
+        "numero": "19",
+        "id": "YlthKoxmrBGBK2SJJoUZ"
+    },
+    {
+        "denunciante": "ABDESSAMAD KHARMOUDI",
+        "instructor": "X95007H",
+        "evento": "DROGAS/OCIO",
+        "hecho": "116492708",
+        "numero": "18",
+        "estado": "ENVIADAS",
+        "descripcion": "DENUNCIA 4/15 DROGA",
+        "id": "0UaaZAQA0csJNWLtMeKP"
+    },
+    {
+        "evento": "DROGAS/OCIO",
+        "numero": "17",
+        "estado": "ENVIADAS",
+        "hecho": "116492238",
+        "instructor": "X95007H",
+        "descripcion": "DENUNCIA 4/15 DROGA",
+        "denunciante": "SUSANA CAPARROS",
+        "id": "oI5ZO8GoOmnqpU7Wjtpr"
+    },
+    {
+        "descripcion": "DENUNCIA 4/15 DROGA",
+        "evento": "DROGAS/OCIO",
+        "hecho": "116491995",
+        "instructor": "X95007H",
+        "denunciante": "B23057T - JAVIER SANCHEZ",
+        "numero": "16",
+        "estado": "ENVIADAS",
+        "id": "3nqrjH2Jvbh7dOgNPMIw"
+    },
+    {
+        "evento": "VÍAS DE COMUNICACIÓN",
+        "hecho": "116490867",
+        "numero": "15",
+        "estado": "ENVIADAS",
+        "instructor": "X95007H",
+        "denunciante": "A08320E ",
+        "descripcion": "DENUNCIA ITV",
+        "id": "AJPBPxShplHpf3pt9gKc"
+    },
+    {
+        "hecho": "116490761",
+        "estado": "ENVIADAS",
+        "numero": "14",
+        "denunciante": "A08320E ANTONIO RUBI",
+        "descripcion": "DENUNCIA ITV",
+        "instructor": "X95007H",
+        "evento": "VÍAS DE COMUNICACIÓN",
+        "id": "50wcMM9WePxTRDrzDAk2"
+    },
+    {
+        "estado": "ARCHIVADAS",
+        "descripcion": "COMPARENCIA NO PENAL",
+        "evento": "",
+        "hecho": "116486131",
+        "instructor": "J46858L",
+        "numero": "12",
+        "denunciante": "CARMEN GADOR VILLEGAS RUIZ",
+        "id": "KYyR5qyXedy8rZz0e55j"
+    },
+    {
+        "estado": "ABIERTAS",
+        "denunciante": "ESPERANZA ACUÑA SANCHEZ",
+        "numero": "11",
+        "evento": "",
+        "descripcion": "DELITO DE ESTAFA",
+        "instructor": "C21300R",
+        "hecho": "116485660",
+        "id": "IgywfFpjyfFRuKfSb4OW"
+    },
+    {
+        "descripcion": "EXTRAVIO DOCUMENTACIÓN",
+        "evento": "",
+        "instructor": "C21300R",
+        "numero": "10",
+        "denunciante": "CARLOS DE TENA MOYA",
+        "estado": "ARCHIVADAS",
+        "hecho": "116482235",
+        "id": "dRgB9SQq4TYBIeVrfhUg"
+    },
+    {
+        "numero": "9",
+        "evento": "VÍAS DE COMUNICACIÓN",
+        "denunciante": "M83446P/C47345C - FRANCISCO JULIANJ MUÑOZ ALONSO",
+        "instructor": "Q12816X",
+        "hecho": "116479163",
+        "descripcion": "INFR. R.G.CIRCULACIÓN SEMÁFORO",
+        "estado": "ENVIADAS",
+        "id": "5260lPkueZty7B1kkRzq"
+    },
+    {
+        "estado": "ENVIADAS",
+        "denunciante": "A08320E/B23057T - SAID EL HALOUI",
+        "numero": "8",
+        "hecho": "116479010",
+        "evento": "VÍAS DE COMUNICACIÓN",
+        "instructor": "Q12816X",
+        "descripcion": "INFR. R.G. CONDUCTORES AUTORIZACIÓN ADMINISTRATIVA",
+        "id": "EF8TnyGf05IN9eeFoM2n"
+    },
+    {
+        "descripcion": "INFR. L.O.4/15 HACHÍS",
+        "denunciante": "B23057T/A08320E - DANIEL FORNIELES RODRIGUEZ",
+        "instructor": "Q12816X",
+        "hecho": "116478837/116478877",
+        "evento": "DROGAS/OCIO",
+        "estado": "ENVIADAS",
+        "numero": "7",
+        "id": "f9Rimsd9EXa7Q56W4Pu2"
+    },
+    {
+        "numero": "6",
+        "estado": "ENVIADAS",
+        "instructor": "Q12816X",
+        "descripcion": "INFR. L.O.4/15 HACHÍS",
+        "denunciante": "B23057T/A08320E - OSCAR GUTIERREZ FRÍAS",
+        "hecho": "116478748/116478755",
+        "evento": "DROGAS/OCIO",
+        "id": "QufjEzix6dTzHarIo65N"
+    },
+    {
+        "descripcion": "INFR. R.G.VEHÍCULOS. ITV",
+        "instructor": "Q12816X",
+        "denunciante": "Q12816X/C47345C - JOSE ANTONIO LOPEZ PICÓN",
+        "evento": "VÍAS DE COMUNICACIÓN",
+        "hecho": "116478633",
+        "numero": "5",
+        "estado": "ENVIADAS",
+        "id": "42QzUF9DZzBVW2SNhIL9"
+    },
+    {
+        "instructor": "Q12816X",
+        "numero": "4",
+        "denunciante": "ENCARNACIÓN MARÍA GALLARDO SÁNCHEZ",
+        "descripcion": "TENTATIVA DE ACCESO A VIVIENDA",
+        "estado": "ARCHIVADAS",
+        "evento": "",
+        "hecho": "116453871",
+        "id": "Gl7brXafeaFj64blhE1z"
+    },
+    {
+        "evento": "",
+        "instructor": "H25659X",
+        "hecho": "116453735",
+        "numero": "3",
+        "denunciante": "YOLANDA PEÑA PARRILLA",
+        "descripcion": "HURTO DE TELÉFONO MÓVIL",
+        "estado": "ABIERTAS",
+        "id": "EEtqqpr18LhfAbI5EzQg"
+    },
+    {
+        "instructor": "M83446P",
+        "evento": "",
+        "estado": "ABIERTAS",
+        "descripcion": "DELITO DE LESIONES CON ARMA BLANCA",
+        "numero": "2",
+        "denunciante": "JOSE MANUEL HEREDIA CORTÉS",
+        "hecho": "116436998",
+        "id": "FYHdTD1zGLQnq0wzccvX"
+    },
+    {
+        "hecho": "116435267",
+        "denunciante": "WIE BUBACAR NANJA CORREIA",
+        "evento": "",
+        "numero": "1",
+        "estado": "ENVIADAS",
+        "descripcion": "DETENCIÓN DE UNA PERSONA POR REQUISITORIA",
+        "instructor": "Q12816X",
+        "id": "wdt1VzFkBRTgcZZHFrNM"
+    },
+    {
+        "hecho": "",
+        "descripcion": "",
+        "evento": "",
+        "estado": "",
+        "denunciante": "",
+        "instructor": "",
+        "numero": "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ",
+        "id": "7BbciScpMG9iJwjfNHIH"
+    }
+]
