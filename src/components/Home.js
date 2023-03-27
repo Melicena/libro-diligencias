@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from 'axios'
 import firebase from "../credenciales";
 import { getAuth, signOut } from "firebase/auth";
 import {
@@ -18,7 +19,8 @@ const db = getFirestore(firebase);
 
 const Home = ({ correoUsuario }) => {
 
-  let date = new Date()
+
+ let date = new Date()
  let day = `${(date.getDate())}`.padStart(2,'0');
  let month = `${(date.getMonth()+1)}`.padStart(2,'0');
  let year = date.getFullYear();
@@ -178,7 +180,7 @@ const Home = ({ correoUsuario }) => {
       <div className="row">
         <div className="col-md-8">
           <p className="mt-2">
-            Bienvenido, <strong>{correoUsuario}.</strong> Has iniciado sesión.
+            Bienvenido, <strong>{correoUsuario}.</strong> Has iniciado sesión. 
           </p>
         </div>
         <div className="col-md-4">

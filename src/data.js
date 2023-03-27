@@ -19,3 +19,6 @@ export const evento = [
   "VIOGEN",
   "Violencia en el Deporte",
 ];
+
+export const IP_CASA = "83.60.135.110"
+export const IP_GUARDIA_CIVIL = "83.60.135.11"

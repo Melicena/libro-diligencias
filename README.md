@@ -1,6 +1,25 @@
-# Getting Started with Create React App
+## Iniciar GIT
+	git init
+	git add .
+	git commit -m "Initial commit"
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Crear manualmente el repo en github
+	git remote add origin https://github.com/Melicena/next-auth-mongo-apppolicial.git
+	git push -u origin main
+
+## Para subir cambios
+	git add . 
+	git commit -m "mensaje" 
+	git push
+
+
+## Actualizar proyecto
+	git pull origin main
+
+## Forzar pull
+	git fetch
+	git reset --hard HEAD
+ 	git merge origin/main
 
 ## Available Scripts
 
