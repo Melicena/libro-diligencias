@@ -20,5 +20,5 @@ export const evento = [
   "Violencia en el Deporte",
 ];
 
-export const IP_CASA = "83.60.135.110"
+export const IP_CASA = "34 81.37.204.18"
 export const IP_GUARDIA_CIVIL = "62.36.55.249"
