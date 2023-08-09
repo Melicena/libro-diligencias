@@ -31,7 +31,7 @@ function App() {
     }
   });
 
-  console.log(ip);
+  console.log(ip , IP_CASA);
   if (ip === IP_CASA || ip === IP_GUARDIA_CIVIL) {
     console.log("DENTRO");
     return (
